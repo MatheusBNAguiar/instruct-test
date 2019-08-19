@@ -1,5 +1,3 @@
-$margin-offset: 10px;
-
 $viewport-mapping: (
   xs: null,
   sm: "min-width: 768px",
@@ -30,9 +28,8 @@ $viewport-mapping: (
   @for $column from 1 to 13 {
     $size: $column/12;
     .col-#{$viewport}-#{$column} {
-      flex-basis: calc(#{$size * 100%} - #{$margin-offset * 2});
-      max-width: calc(#{$size * 100%} - #{$margin-offset * 2});
-      margin: $margin-offset;
+      flex-basis: calc(#{$size * 100%});
+      max-width: calc(#{$size * 100%});
     }
   }
 }
@@ -44,7 +41,6 @@ $viewport-mapping: (
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 
 @each $viewport, $media-query in $viewport-mapping {
   @include base-flexbox($viewport);

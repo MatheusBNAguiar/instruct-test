@@ -9,7 +9,7 @@
         <hr class="separator-line" />
       </div>
       <div class="users-list-container flex-row">
-        <UserCard v-for="user in users" :key="user.id" :user="user" class="col-md-6 col-xs-12"></UserCard>
+        <UserCard v-for="user in users" :key="user.id" :user="user"></UserCard>
       </div>
     </div>
   </div>
