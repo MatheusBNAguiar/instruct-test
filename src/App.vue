@@ -28,7 +28,7 @@ export default {
     return {
       InstructLogo,
       users: [],
-      apiService: ApiService("http://jsonplaceholder.typicode.com")
+      apiService: ApiService("https://jsonplaceholder.typicode.com")
     };
   },
   beforeMount() {
