@@ -1,0 +1,53 @@
+$viewport-mapping: (
+  xs: null,
+  sm: "min-width: 768px",
+  md: "min-width: 1024px",
+  lg: "min-width: 1200px"
+);
+
+@mixin base-flexbox($viewport) {
+  .col-#{$viewport},
+  .col-#{$viewport}-1,
+  .col-#{$viewport}-2,
+  .col-#{$viewport}-3,
+  .col-#{$viewport}-4,
+  .col-#{$viewport}-5,
+  .col-#{$viewport}-6,
+  .col-#{$viewport}-7,
+  .col-#{$viewport}-8,
+  .col-#{$viewport}-9,
+  .col-#{$viewport}-10,
+  .col-#{$viewport}-11,
+  .col-#{$viewport}-12 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+  }
+}
+
+@mixin generate-columns($viewport) {
+  @for $column from 1 to 13 {
+    .col-#{$viewport}-#{$column} {
+      flex-basis: percentage(1/$column);
+      max-width: percentage(1/$column);
+    }
+  }
+}
+
+.flex-row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@each $viewport, $media-query in $viewport-mapping {
+  @include base-flexbox($viewport);
+  @if $media-query==null {
+    @include generate-columns($viewport);
+  } @else {
+    @media screen and (#{$media-query}) {
+      @include generate-columns($viewport);
+    }
+  }
+}

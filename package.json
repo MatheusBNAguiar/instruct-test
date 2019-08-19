@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "eslint-plugin-you--need-lodash-underscore": "^6.6.0",
+    "normalize.css": "^8.0.1",
     "vue": "^2.6.10"
   },
   "devDependencies": {
+    "eslint-plugin-you-dont-need-lodash-underscore": "^6.6.0",
     "@vue/cli-plugin-babel": "^3.10.0",
     "@vue/cli-plugin-eslint": "^3.10.0",
     "@vue/cli-service": "^3.10.0",

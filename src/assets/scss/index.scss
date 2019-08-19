@@ -1,0 +1,65 @@
+@import "variables";
+@import "flexbox";
+
+* {
+  font-family: $secondary-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $primary-dark-blue;
+  font-family: $primary-font;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-wrapper {
+  height: 100vh;
+}
+
+.app-navbar {
+  background: linear-gradient(45deg, #1e73aa 0%, #23a5fa 100%);
+  height: $navbar-height;
+  position: fixed;
+  width: 100%;
+
+  &__logo {
+    margin-left: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__logo {
+      margin: 0 auto;
+    }
+  }
+}
+
+.app-content {
+  height: 100%;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  margin-top: $navbar-height;
+  background: white;
+
+  @media screen and (max-width: 768px) {
+    &__logo {
+      margin: 0 auto;
+    }
+  }
+}
+
+.app-header {
+  padding: 20px;
+}
+
+.separator-line {
+  border-color: $primary-dark-blue;
+}

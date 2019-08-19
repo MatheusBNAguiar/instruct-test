@@ -1,28 +1,24 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app-wrapper flex-row">
+    <div class="app-navbar flex-row">
+      <img class="app-navbar__logo" :src="InstructLogo" />
+    </div>
+    <div class="app-content">
+      <div class="app-header">
+        <h1>Usuários</h1>
+        <hr class="separator-line"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-
+import InstructLogo from "./assets/svg/instruct-logo.svg";
 export default {
-  name: 'app',
-  components: {
-    HelloWorld,
-  },
+  name: "app",
+  components: {},
+  data() {
+    return { InstructLogo };
+  }
 };
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
