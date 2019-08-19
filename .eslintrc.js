@@ -19,7 +19,6 @@ module.exports = {
     "global-require": "off",
     "radix": "off",
     "no-new": "off",
-    "max-len": "off",
     "vue/valid-v-for": "off",
     "import/prefer-default-export": "off",
     "no-shadow": "off",

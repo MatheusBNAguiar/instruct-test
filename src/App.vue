@@ -9,9 +9,7 @@
         <hr class="separator-line" />
       </div>
       <div class="users-list-container flex-row">
-        <Card class="col-xs-6" >fasfas</Card>
-        <Card class="col-xs-6" >fasfas</Card>
-        <Card class="col-xs-6" >fasfas</Card>
+        <UserCard v-for="user in users" :key="user.id" :user="user" class="col-md-6 col-xs-12"></UserCard>
       </div>
     </div>
   </div>
@@ -19,24 +17,28 @@
 
 <script>
 import InstructLogo from "./assets/svg/instruct-logo.svg";
-import Card from "./components/Card/Card";
+import UserCard from "./components/UserCard/UserCard";
+
+import ApiService from "./services/Api";
 
 export default {
   name: "app",
-  components: { Card },
+  components: { UserCard },
   data() {
     return {
       InstructLogo,
-      users: []
+      users: [],
+      apiService: ApiService("http://jsonplaceholder.typicode.com")
     };
+  },
+  beforeMount() {
+    this.apiService.get("users").then(users => (this.users = users));
   }
 };
 </script>
 
 <style lang="scss">
-
 .users-list-container {
   padding: 20px;
 }
-
 </style>

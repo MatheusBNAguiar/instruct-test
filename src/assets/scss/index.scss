@@ -21,6 +21,7 @@ body {
 
 .app-wrapper {
   height: 100vh;
+  overflow-y: scroll;
 }
 
 .app-navbar {
@@ -41,12 +42,12 @@ body {
 }
 
 .app-content {
-  height: 100%;
+  height: calc(100% - #{$navbar-height} - #{2*$content-padding});
   margin: 0 auto;
+  margin-top: $navbar-height;
   width: 100%;
   max-width: 1200px;
-  padding: 20px;
-  margin-top: $navbar-height;
+  padding: $content-padding;
   background: white;
 
   @media screen and (max-width: 768px) {
