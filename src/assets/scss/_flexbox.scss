@@ -26,9 +26,10 @@ $viewport-mapping: (
 
 @mixin generate-columns($viewport) {
   @for $column from 1 to 13 {
+    $size: $column/12;
     .col-#{$viewport}-#{$column} {
-      flex-basis: percentage(1/$column);
-      max-width: percentage(1/$column);
+      flex-basis: $size*100%;
+      max-width: $size*100%;
     }
   }
 }
