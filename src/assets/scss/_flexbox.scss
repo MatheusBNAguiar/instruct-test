@@ -45,8 +45,12 @@ $viewport-mapping: (
   flex-wrap: wrap;
 }
 
+
 @each $viewport, $media-query in $viewport-mapping {
   @include base-flexbox($viewport);
+}
+
+@each $viewport, $media-query in $viewport-mapping {
   @if $media-query==null {
     @include generate-columns($viewport);
   } @else {
