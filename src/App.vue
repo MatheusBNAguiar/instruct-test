@@ -9,7 +9,9 @@
         <hr class="separator-line" />
       </div>
       <div class="users-list-container flex-row">
-        <Card class="col-xs-6" />
+        <Card class="col-xs-6" >fasfas</Card>
+        <Card class="col-xs-6" >fasfas</Card>
+        <Card class="col-xs-6" >fasfas</Card>
       </div>
     </div>
   </div>
