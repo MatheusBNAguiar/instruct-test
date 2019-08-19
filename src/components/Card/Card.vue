@@ -11,9 +11,7 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 30px 0 rgba(0, 0, 0, 0.35);
   border-radius: 15px;
   padding: 20px;
-  min-height: 40px;
 }
 .card-content {
   height: 100%;
 }
-</style>
