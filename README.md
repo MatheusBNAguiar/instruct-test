@@ -4,7 +4,7 @@
 
 This project was built as a test for Instruct Company. The objectives of the test were:
 
-- [x] Consume an [API data];
+- [x] Consume an [API data]("http://jsonplaceholder.typicode.com/users");
 - [x] Show requested data;
 - [x] Create a filter using e-mail domains;
 - [x] Take care on site responsivity;
