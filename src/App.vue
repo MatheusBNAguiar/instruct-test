@@ -18,7 +18,12 @@
         >{{email}}</Pill>
       </div>
       <div class="users-list-container flex-row">
-        <UserCard v-for="user in filteredUsers" :key="user.id" :user="user"></UserCard>
+        <UserCard
+          v-for="user in users"
+          v-show="filteredUsers(user.email)"
+          :key="user.id"
+          :user="user"
+        ></UserCard>
       </div>
     </div>
   </div>
@@ -49,16 +54,6 @@ export default {
         const domain = pattern[pattern.length - 1];
         return list.indexOf(domain) === -1 ? [...list, domain] : list;
       }, []);
-    },
-    filteredUsers() {
-      if (!this.selectedMail.length) {
-        return this.users;
-      }
-      return this.users.filter(({ email }) => {
-        return this.selectedMail.filter(label => {
-          return email.indexOf(label) !== -1;
-        }).length;
-      });
     }
   },
   methods: {
@@ -71,6 +66,14 @@ export default {
           this.selectedMail.splice(location, 1);
         }
       };
+    },
+    filteredUsers(email) {
+      if (!this.selectedMail.length) {
+        return this.users;
+      }
+      return this.selectedMail.filter(label => {
+        return email.indexOf(label) !== -1;
+      }).length;
     }
   },
   beforeMount() {
